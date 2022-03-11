@@ -8,3 +8,11 @@
 import Foundation
 
 // Last assignment use to get square well wave functions psi_i
+class OneDSchrodinger: ObservableObject {
+    
+    func squareWellSolution() {
+        
+    }
+    
+    
+}

@@ -9,8 +9,10 @@ import Foundation
 
 class Integrator: ObservableObject {
     
-    func avgValIntegration(valuesToIntegrate: [Double]) {
+    func avgValIntegration(valuesToIntegrate: [Double]) -> Double {
+        var integration
         
+        return integration
     }
     
 }
