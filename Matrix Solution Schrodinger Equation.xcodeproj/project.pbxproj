@@ -34,6 +34,8 @@
 		A3FA43A127DBFC7100ADDF0F /* PlotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439F27DBFC7100ADDF0F /* PlotClass.swift */; };
 		A3FA43A327DC088D00ADDF0F /* Average Value Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA43A227DC088D00ADDF0F /* Average Value Integration.swift */; };
 		A3FA43A427DC088D00ADDF0F /* Average Value Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA43A227DC088D00ADDF0F /* Average Value Integration.swift */; };
+		A3FA43A627DC0A4500ADDF0F /* Potential Wells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA43A527DC0A4500ADDF0F /* Potential Wells.swift */; };
+		A3FA43A727DC0A4500ADDF0F /* Potential Wells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA43A527DC0A4500ADDF0F /* Potential Wells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		A3FA439C27DBFC4800ADDF0F /* PlotDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotDataClass.swift; sourceTree = "<group>"; };
 		A3FA439F27DBFC7100ADDF0F /* PlotClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotClass.swift; sourceTree = "<group>"; };
 		A3FA43A227DC088D00ADDF0F /* Average Value Integration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Average Value Integration.swift"; sourceTree = "<group>"; };
+		A3FA43A527DC0A4500ADDF0F /* Potential Wells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Potential Wells.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 				A3FA434927DBE11B00ADDF0F /* ContentView.swift */,
 				A3FA438A27DBF11700ADDF0F /* Schrodinger Eq Matrix.swift */,
 				A3FA438D27DBF7B500ADDF0F /* Wave Functions.swift */,
+				A3FA43A527DC0A4500ADDF0F /* Potential Wells.swift */,
 				A3FA43A227DC088D00ADDF0F /* Average Value Integration.swift */,
 				A3FA439927DBFC1F00ADDF0F /* ChangingPlotParameters.swift */,
 				A3FA439F27DBFC7100ADDF0F /* PlotClass.swift */,
@@ -356,6 +360,7 @@
 				A3FA437227DBE12200ADDF0F /* ContentView.swift in Sources */,
 				A3FA437027DBE12200ADDF0F /* Matrix_Solution_Schrodinger_EquationApp.swift in Sources */,
 				A3FA438B27DBF11800ADDF0F /* Schrodinger Eq Matrix.swift in Sources */,
+				A3FA43A627DC0A4500ADDF0F /* Potential Wells.swift in Sources */,
 				A3FA43A327DC088D00ADDF0F /* Average Value Integration.swift in Sources */,
 				A3FA438E27DBF7B500ADDF0F /* Wave Functions.swift in Sources */,
 				A3FA439D27DBFC4800ADDF0F /* PlotDataClass.swift in Sources */,
@@ -372,6 +377,7 @@
 				A3FA437327DBE12200ADDF0F /* ContentView.swift in Sources */,
 				A3FA437127DBE12200ADDF0F /* Matrix_Solution_Schrodinger_EquationApp.swift in Sources */,
 				A3FA438C27DBF11800ADDF0F /* Schrodinger Eq Matrix.swift in Sources */,
+				A3FA43A727DC0A4500ADDF0F /* Potential Wells.swift in Sources */,
 				A3FA43A427DC088D00ADDF0F /* Average Value Integration.swift in Sources */,
 				A3FA438F27DBF7B500ADDF0F /* Wave Functions.swift in Sources */,
 				A3FA439E27DBFC4800ADDF0F /* PlotDataClass.swift in Sources */,
