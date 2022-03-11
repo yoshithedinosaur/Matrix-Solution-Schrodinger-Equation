@@ -6,12 +6,29 @@
 //
 
 import SwiftUI
+import CorePlot
+
+typealias plotDataType = [CPTScatterPlotField : Double]
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        HStack {
+            
+            VStack {
+                Text("Potential Selector")
+                
+                Text("Eigen energies")
+            }
+            
+            VStack {
+                
+            }
+            
+        }
+        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -17,6 +17,23 @@
 		A3FA437327DBE12200ADDF0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA434927DBE11B00ADDF0F /* ContentView.swift */; };
 		A3FA437427DBE12200ADDF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FA434A27DBE12100ADDF0F /* Assets.xcassets */; };
 		A3FA437527DBE12200ADDF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FA434A27DBE12100ADDF0F /* Assets.xcassets */; };
+		A3FA438727DBEFA300ADDF0F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FA438627DBEFA300ADDF0F /* Accelerate.framework */; };
+		A3FA438927DBEFAE00ADDF0F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FA438827DBEFAE00ADDF0F /* Accelerate.framework */; platformFilter = maccatalyst; };
+		A3FA438B27DBF11800ADDF0F /* Schrodinger Eq Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA438A27DBF11700ADDF0F /* Schrodinger Eq Matrix.swift */; };
+		A3FA438C27DBF11800ADDF0F /* Schrodinger Eq Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA438A27DBF11700ADDF0F /* Schrodinger Eq Matrix.swift */; };
+		A3FA438E27DBF7B500ADDF0F /* Wave Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA438D27DBF7B500ADDF0F /* Wave Functions.swift */; };
+		A3FA438F27DBF7B500ADDF0F /* Wave Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA438D27DBF7B500ADDF0F /* Wave Functions.swift */; };
+		A3FA439227DBFB1000ADDF0F /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = A3FA439127DBFB1000ADDF0F /* CorePlot */; };
+		A3FA439727DBFBDD00ADDF0F /* CorePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439627DBFBDD00ADDF0F /* CorePlot.swift */; };
+		A3FA439827DBFBDD00ADDF0F /* CorePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439627DBFBDD00ADDF0F /* CorePlot.swift */; };
+		A3FA439A27DBFC1F00ADDF0F /* ChangingPlotParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439927DBFC1F00ADDF0F /* ChangingPlotParameters.swift */; };
+		A3FA439B27DBFC1F00ADDF0F /* ChangingPlotParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439927DBFC1F00ADDF0F /* ChangingPlotParameters.swift */; };
+		A3FA439D27DBFC4800ADDF0F /* PlotDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439C27DBFC4800ADDF0F /* PlotDataClass.swift */; };
+		A3FA439E27DBFC4800ADDF0F /* PlotDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439C27DBFC4800ADDF0F /* PlotDataClass.swift */; };
+		A3FA43A027DBFC7100ADDF0F /* PlotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439F27DBFC7100ADDF0F /* PlotClass.swift */; };
+		A3FA43A127DBFC7100ADDF0F /* PlotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA439F27DBFC7100ADDF0F /* PlotClass.swift */; };
+		A3FA43A327DC088D00ADDF0F /* Average Value Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA43A227DC088D00ADDF0F /* Average Value Integration.swift */; };
+		A3FA43A427DC088D00ADDF0F /* Average Value Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA43A227DC088D00ADDF0F /* Average Value Integration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +66,16 @@
 		A3FA436827DBE12100ADDF0F /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FA436C27DBE12100ADDF0F /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A3FA436E27DBE12100ADDF0F /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		A3FA438427DBEF9200ADDF0F /* Matrix-Solution-Schrodinger-Equation--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Matrix-Solution-Schrodinger-Equation--iOS--Info.plist"; sourceTree = "<group>"; };
+		A3FA438627DBEFA300ADDF0F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		A3FA438827DBEFAE00ADDF0F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A3FA438A27DBF11700ADDF0F /* Schrodinger Eq Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schrodinger Eq Matrix.swift"; sourceTree = "<group>"; };
+		A3FA438D27DBF7B500ADDF0F /* Wave Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wave Functions.swift"; sourceTree = "<group>"; };
+		A3FA439627DBFBDD00ADDF0F /* CorePlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorePlot.swift; sourceTree = "<group>"; };
+		A3FA439927DBFC1F00ADDF0F /* ChangingPlotParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingPlotParameters.swift; sourceTree = "<group>"; };
+		A3FA439C27DBFC4800ADDF0F /* PlotDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotDataClass.swift; sourceTree = "<group>"; };
+		A3FA439F27DBFC7100ADDF0F /* PlotClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotClass.swift; sourceTree = "<group>"; };
+		A3FA43A227DC088D00ADDF0F /* Average Value Integration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Average Value Integration.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FA439227DBFB1000ADDF0F /* CorePlot in Frameworks */,
+				A3FA438727DBEFA300ADDF0F /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FA438927DBEFAE00ADDF0F /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,11 +116,13 @@
 		A3FA434227DBE11B00ADDF0F = {
 			isa = PBXGroup;
 			children = (
+				A3FA438427DBEF9200ADDF0F /* Matrix-Solution-Schrodinger-Equation--iOS--Info.plist */,
 				A3FA434727DBE11B00ADDF0F /* Shared */,
 				A3FA435627DBE12100ADDF0F /* macOS */,
 				A3FA435F27DBE12100ADDF0F /* Tests iOS */,
 				A3FA436B27DBE12100ADDF0F /* Tests macOS */,
 				A3FA435027DBE12100ADDF0F /* Products */,
+				A3FA438527DBEFA200ADDF0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,7 +131,14 @@
 			children = (
 				A3FA434827DBE11B00ADDF0F /* Matrix_Solution_Schrodinger_EquationApp.swift */,
 				A3FA434927DBE11B00ADDF0F /* ContentView.swift */,
+				A3FA438A27DBF11700ADDF0F /* Schrodinger Eq Matrix.swift */,
+				A3FA438D27DBF7B500ADDF0F /* Wave Functions.swift */,
+				A3FA43A227DC088D00ADDF0F /* Average Value Integration.swift */,
+				A3FA439927DBFC1F00ADDF0F /* ChangingPlotParameters.swift */,
+				A3FA439F27DBFC7100ADDF0F /* PlotClass.swift */,
 				A3FA434A27DBE12100ADDF0F /* Assets.xcassets */,
+				A3FA439C27DBFC4800ADDF0F /* PlotDataClass.swift */,
+				A3FA439627DBFBDD00ADDF0F /* CorePlot.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -141,6 +180,15 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		A3FA438527DBEFA200ADDF0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3FA438827DBEFAE00ADDF0F /* Accelerate.framework */,
+				A3FA438627DBEFA300ADDF0F /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +205,9 @@
 			dependencies = (
 			);
 			name = "Matrix Solution Schrodinger Equation (iOS)";
+			packageProductDependencies = (
+				A3FA439127DBFB1000ADDF0F /* CorePlot */,
+			);
 			productName = "Matrix Solution Schrodinger Equation (iOS)";
 			productReference = A3FA434F27DBE12100ADDF0F /* Matrix Solution Schrodinger Equation.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +300,9 @@
 				Base,
 			);
 			mainGroup = A3FA434227DBE11B00ADDF0F;
+			packageReferences = (
+				A3FA439027DBFB1000ADDF0F /* XCRemoteSwiftPackageReference "core-plot" */,
+			);
 			productRefGroup = A3FA435027DBE12100ADDF0F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,6 +355,13 @@
 			files = (
 				A3FA437227DBE12200ADDF0F /* ContentView.swift in Sources */,
 				A3FA437027DBE12200ADDF0F /* Matrix_Solution_Schrodinger_EquationApp.swift in Sources */,
+				A3FA438B27DBF11800ADDF0F /* Schrodinger Eq Matrix.swift in Sources */,
+				A3FA43A327DC088D00ADDF0F /* Average Value Integration.swift in Sources */,
+				A3FA438E27DBF7B500ADDF0F /* Wave Functions.swift in Sources */,
+				A3FA439D27DBFC4800ADDF0F /* PlotDataClass.swift in Sources */,
+				A3FA439727DBFBDD00ADDF0F /* CorePlot.swift in Sources */,
+				A3FA439A27DBFC1F00ADDF0F /* ChangingPlotParameters.swift in Sources */,
+				A3FA43A027DBFC7100ADDF0F /* PlotClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +371,13 @@
 			files = (
 				A3FA437327DBE12200ADDF0F /* ContentView.swift in Sources */,
 				A3FA437127DBE12200ADDF0F /* Matrix_Solution_Schrodinger_EquationApp.swift in Sources */,
+				A3FA438C27DBF11800ADDF0F /* Schrodinger Eq Matrix.swift in Sources */,
+				A3FA43A427DC088D00ADDF0F /* Average Value Integration.swift in Sources */,
+				A3FA438F27DBF7B500ADDF0F /* Wave Functions.swift in Sources */,
+				A3FA439E27DBFC4800ADDF0F /* PlotDataClass.swift in Sources */,
+				A3FA439827DBFBDD00ADDF0F /* CorePlot.swift in Sources */,
+				A3FA439B27DBFC1F00ADDF0F /* ChangingPlotParameters.swift in Sources */,
+				A3FA43A127DBFC7100ADDF0F /* PlotClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +536,7 @@
 				DEVELOPMENT_TEAM = HZ8BHG3P39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Matrix-Solution-Schrodinger-Equation--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -498,6 +567,7 @@
 				DEVELOPMENT_TEAM = HZ8BHG3P39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Matrix-Solution-Schrodinger-Equation--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -703,6 +773,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3FA439027DBFB1000ADDF0F /* XCRemoteSwiftPackageReference "core-plot" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/core-plot/core-plot.git";
+			requirement = {
+				branch = "release-2.4";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3FA439127DBFB1000ADDF0F /* CorePlot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3FA439027DBFB1000ADDF0F /* XCRemoteSwiftPackageReference "core-plot" */;
+			productName = CorePlot;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A3FA434327DBE11B00ADDF0F /* Project object */;
 }
