@@ -27,39 +27,45 @@ class SchrodingerEqMat: ObservableObject {
     
     let integrator = Integrator()
     let squareWell = OneDSchrodinger()
-    var ijSquareWellWaveFunctions: [[Double]] = []   // Stores an array of arrays square well solutions (analitically know so we can hard code it in)
-    var nSquareWellEnergy: [Double] = []    // energies of the square well
-    var iSquareWellPotential: [Double] = []
-    var ijHamiltonian: [[Double]] = []  // stores a matrix
-    var perturbationTerm: [Double] = []
+    //var ijSquareWellWaveFunctions: [[Double]] = []   // Stores an array of arrays square well solutions (analitically know so we can hard code it in)
+    //var nSquareWellEnergy: [Double] = []    // energies of the square well
+    //var iSquareWellPotential: [Double] = []
+    var hamiltonianMatrix: [[Double]] = []  // stores a matrix
+    //var perturbationTerm: [Double] = []
     
     /// constructHamiltonian
     /// -constructs the hermitian operator used for finding eigen vectors and eigen values
     /// elements of H: <psi_i| H_ij |psi_j>
     /// the diagonals are the energies of the square well + integrated psi*V*psi
     /// off diagonals just psi*V*psi
-    func constructHamiltonian () {
+    func constructHamiltonian(potentialType: String, boxLength: Double, xStep: Double, matrixSize: Int) -> [[Double]] {
         var ijKronecker = 0.0
-        var psiVPsi = 0.0
         
-        for i in 0..<nSquareWellEnergy.count {
-            for j in 0..<nSquareWellEnergy.count {
+        /*
+        for i in 0..<matrixSize {
+            for j in 0..<matrixSize {
                 perturbationTerm[i] = ijSquareWellWaveFunctions[i][j] * iSquareWellPotential[i] * ijSquareWellWaveFunctions[i][j]
             }
         }
+        */
         
-        for i in 0..<nSquareWellEnergy.count {
-            for j in 0..<nSquareWellEnergy.count {
+        //Constructs the Hamiltonian with indices H_ij
+        //diagonal elements will have the square well (unperturbed) component + the perturbation component
+        for i in 0..<matrixSize {
+            for j in 0..<matrixSize {
                 if i == j {
                     ijKronecker = 1.0
                 } else {
                     ijKronecker = 0.0
                 }
-                //psiVPsi = integrator.avgValIntegration(valuesToIntegrate: valuesToIntegrate)
-                ijHamiltonian[i][j] = ijKronecker * nSquareWellEnergy[i] + psiVPsi
+                hamiltonianMatrix[i][j] = ijKronecker * squareWell.squareWellEn(quantNumb: i, boxLength: boxLength) + integrator.perturbationIntegration(potentialType: potentialType, quantumNumbi: i, quantumNumbj: j, boxLength: boxLength, xStep: xStep)
             }
         }
+        
+        return hamiltonianMatrix
     }
+    
+    
     
     /// findEigens
     /// -finds all eigen values and eigen vectors using dgeev_

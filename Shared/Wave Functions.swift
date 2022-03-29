@@ -34,6 +34,16 @@ class OneDSchrodinger: ObservableObject {
         return psiX
     }
     
+    
+    ///squareWellEn: gives the En energy of the square well for quantum number n
+    //           2  2   2
+    //      hbar   n  pi
+    // E  = -------------
+    //  n           2
+    //         2 m L
+    ///parameters:
+    ///-quantNumb: quantum number n
+    ///-boxLength: size of square well box
     func squareWellEn(quantNumb: Int, boxLength: Double) -> Double {
         var energyN: Double
         
