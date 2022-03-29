@@ -26,12 +26,12 @@ import Accelerate
 class SchrodingerEqMat: ObservableObject {
     
     let integrator = Integrator()
-    var iSquareWellWaveFunctions: [[Double]] = []   // Stores an array of arrays square well solutions (analitically know so we can hard code it in)
+    let squareWell = OneDSchrodinger()
+    var ijSquareWellWaveFunctions: [[Double]] = []   // Stores an array of arrays square well solutions (analitically know so we can hard code it in)
     var nSquareWellEnergy: [Double] = []    // energies of the square well
     var iSquareWellPotential: [Double] = []
     var ijHamiltonian: [[Double]] = []  // stores a matrix
-    var iPsiVPsi: [Double] = []
-    var valuesToIntegrate: [Double] = []
+    var perturbationTerm: [Double] = []
     
     /// constructHamiltonian
     /// -constructs the hermitian operator used for finding eigen vectors and eigen values
@@ -43,7 +43,9 @@ class SchrodingerEqMat: ObservableObject {
         var psiVPsi = 0.0
         
         for i in 0..<nSquareWellEnergy.count {
-            valuesToIntegrate[i] = iPsiVPsi[i] * iSquareWellPotential[i] * iPsiVPsi[i]
+            for j in 0..<nSquareWellEnergy.count {
+                perturbationTerm[i] = ijSquareWellWaveFunctions[i][j] * iSquareWellPotential[i] * ijSquareWellWaveFunctions[i][j]
+            }
         }
         
         for i in 0..<nSquareWellEnergy.count {
@@ -53,7 +55,7 @@ class SchrodingerEqMat: ObservableObject {
                 } else {
                     ijKronecker = 0.0
                 }
-                psiVPsi = integrator.avgValIntegration(valuesToIntegrate: valuesToIntegrate)
+                //psiVPsi = integrator.avgValIntegration(valuesToIntegrate: valuesToIntegrate)
                 ijHamiltonian[i][j] = ijKronecker * nSquareWellEnergy[i] + psiVPsi
             }
         }
