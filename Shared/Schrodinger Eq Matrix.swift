@@ -64,41 +64,48 @@ class SchrodingerEqMat: ObservableObject {
         return hamiltonianMatrix
     }
     
-    func findWaveFunction(hamiltonian: [[Double]], boxLength: Double, xStep: Double, quantumNumb: Int, matrixSize: Int) -> [plotDataType]{
-        let en = squareWell.squareWellEn(quantNumb: quantumNumb, boxLength: boxLength)
+    func findWaveFunction(coeffArray: [Double], boxLength: Double, xStep: Double, matrixSize: Int) -> [plotDataType]{
+        //let en = squareWell.squareWellEn(quantNumb: quantumNumb, boxLength: boxLength)
         var contentArray = [plotDataType]()
-        var fullPsi: [Double] = []
-        var correctionPsi: [Double] = []
-        var ek = 0.0
+        //var fullPsi: [Double] = []
+        var psi: [Double] = []
+        //var ek = 0.0
         
+        var count: Int = 0
         
         for xVal in stride(from: 0.0, to: boxLength, by: xStep) {
-            correctionPsi.append(0.0)
+            psi.append(0.0)
+            
             for k in 1..<matrixSize+1 {
-                if quantumNumb != k {
+                    //ek = squareWell.squareWellEn(quantNumb: k, boxLength: boxLength)
                     
-                    ek = squareWell.squareWellEn(quantNumb: k, boxLength: boxLength)
-                    
-                    correctionPsi[Int(xVal/xStep)] += hamiltonian[k-1][quantumNumb] / (en - ek) * squareWell.squareWellPsi(boxLength: boxLength, quantumNumb: k, xPosition: xVal)
-                }
+                    psi[count] += coeffArray[k-1] * squareWell.squareWellPsi(boxLength: boxLength, quantumNumb: k, xPosition: xVal)
             }
+            /*
+            psi[count] += coeffArray[0] * squareWell.squareWellPsi(boxLength: boxLength, quantumNumb: 1, xPosition: xVal)
+            psi[count] += coeffArray[1] * squareWell.squareWellPsi(boxLength: boxLength, quantumNumb: 2, xPosition: xVal)
+            */
+            //fullPsi.append(squareWell.squareWellPsi(boxLength: boxLength, quantumNumb: quantumNumb, xPosition: xVal) + correctionPsi[Int(xVal/xStep)])
             
-            fullPsi.append(squareWell.squareWellPsi(boxLength: boxLength, quantumNumb: quantumNumb, xPosition: xVal) + correctionPsi[Int(xVal/xStep)])
-            
-            contentArray.append([.X: xVal, .Y: correctionPsi[Int(xVal/xStep)]])
+            contentArray.append([.X: xVal, .Y: psi[count]])
+            count += 1
         }
         
         
         return contentArray
     }
     
-    func findEigenEnergies(realStartingArray: [[Double]]) -> [Double] {
+    func findEigenEnergies(realStartingArray: [[Double]]) -> [(eigenEnergy: Double, coeffArray: [Double])] {
         let N = Int32(realStartingArray.count)
         
         let flatArray :[Double] = pack2dArray(arr: realStartingArray, rows: Int(N), cols: Int(N))
         
-        let eigenEnergyArray = calculateEigenvalues(arrayForDiagonalization: flatArray)
-        return eigenEnergyArray.sorted()
+        let eigenArray = calculateEigenvalues(arrayForDiagonalization: flatArray)
+        let sortedArray = eigenArray.sorted(by: {$0.eigenEnergy < $1.eigenEnergy})
+        
+        //print("\(sortedArray)")
+        
+        return sortedArray
     }
     
     
@@ -109,11 +116,12 @@ class SchrodingerEqMat: ObservableObject {
     ///
     /// - Parameter arrayForDiagonalization: linear Column Major FORTRAN Array for Diagonalization
     /// - Returns: String consisting of the Eigenvalues and Eigenvectors
-    func calculateEigenvalues(arrayForDiagonalization: [Double]) -> [Double] {
+    func calculateEigenvalues(arrayForDiagonalization: [Double]) -> [(eigenEnergy: Double, coeffArray: [Double])] {
         /* Integers sent to the FORTRAN routines must be type Int32 instead of Int */
         //var N = Int32(sqrt(Double(startingArray.count)))
         
-        var returnArray: [Double] = []
+        var returnEnergyArray: [Double] = []
+        
         
         var N = Int32(sqrt(Double(arrayForDiagonalization.count)))
         var N2 = Int32(sqrt(Double(arrayForDiagonalization.count)))
@@ -163,24 +171,72 @@ class SchrodingerEqMat: ObservableObject {
         
         dgeev_(UnsafeMutablePointer(mutating: ("N" as NSString).utf8String), UnsafeMutablePointer(mutating: ("V" as NSString).utf8String), &N, &flatArray, &N2, &wr, &wi, &vl, &N3, &vr, &N4, &workspace, &lwork, &error)
         
+        var eigenSystem: (energy: Double, coeff: [Double]) = (energy: 0.0, coeff: [0.0])
+        var returningEigenSystems: [(energy: Double, coeff: [Double])] = []
         
         if (error == 0)
         {
+            
+            
+            
             for index in 0..<wi.count      /* transform the returned matrices to eigenvalues and eigenvectors */
+            
             {
                 if (wi[index]>=0.0)
                 {
-                    returnArray.append(wr[index])
+                    returnEnergyArray.append(wr[index])
                 }
                 else
                 {
-                    returnArray.append(wr[index])
+                    returnEnergyArray.append(wr[index])
                 }
                 
                 /* To Save Memory dgeev returns a packed array if complex */
+                /* Must Unpack Properly to Get Correct Result
+                 
+                 VR is DOUBLE PRECISION array, dimension (LDVR,N)
+                 If JOBVR = 'V', the right eigenvectors v(j) are stored one
+                 after another in the columns of VR, in the same order
+                 as their eigenvalues.
+                 If JOBVR = 'N', VR is not referenced.
+                 If the j-th eigenvalue is real, then v(j) = VR(:,j),
+                 the j-th column of VR.
+                 If the j-th and (j+1)-st eigenvalues form a complex
+                 conjugate pair, then v(j) = VR(:,j) + i*VR(:,j+1) and
+                 v(j+1) = VR(:,j) - i*VR(:,j+1). */
+                
+                //print("\(vr)")
+                
+                var returnCoeffArray: [Double] = []
+                
+                for j in 0..<N
+                {
+                    //if(wi[index]==0)
+                    //{
+                        
+                    let bob = Int(index)*(Int(N))+Int(j)
+                        returnCoeffArray.append(vr[bob])
+                    if bob == 10 {
+                        print("\(vr[bob])")
+                        print("hello")
+                    }
+                    
+                }
+                
+                eigenSystem = (energy: returnEnergyArray[index], coeff: returnCoeffArray)
+                
+                returningEigenSystems.append(eigenSystem)
+                
+                print("\(returningEigenSystems)")
             }
         }
-                
+        
+    //    let unpackedReturnCoeffArray = unpack2dArray(arr: returnCoeffArray, rows: Int(N), cols: Int(N))
+        var returnArray: [(eigenEnergy: Double, coeffArray: [Double])] = []
+        for i in 0..<Int(N) {
+            returnArray.append((eigenEnergy: returnEnergyArray[i], coeffArray: returningEigenSystems[i].coeff))
+        }
+        
         return returnArray
     }
     

@@ -30,6 +30,7 @@ class OneDSchrodinger: ObservableObject {
         var psiX: Double
         
         psiX = sqrt(2.0/boxLength) * sin(Double(quantumNumb) * Double.pi * xPosition / boxLength)
+
         
         return psiX
     }

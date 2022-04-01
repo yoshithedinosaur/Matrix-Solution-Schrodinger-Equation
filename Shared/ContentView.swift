@@ -104,7 +104,7 @@ struct ContentView: View {
         let hamiltonianMatrix = schrodingerEqMat.constructHamiltonian(potentialType: potentialType, boxLength: 10.0, xStep: 0.01, matrixSize: matrixSize)
         
         for i in 0..<matrixSize {
-            eigenEnergyList.append("n = " + "\(i+1)" + " (E = \(schrodingerEqMat.findEigenEnergies(realStartingArray: hamiltonianMatrix)[i]))")
+            eigenEnergyList.append("n = " + "\(i+1)" + " (E = \(schrodingerEqMat.findEigenEnergies(realStartingArray: hamiltonianMatrix)[i].eigenEnergy))")
         }
         
     }

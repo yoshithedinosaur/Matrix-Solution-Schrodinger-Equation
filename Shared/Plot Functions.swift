@@ -83,8 +83,9 @@ class PlotWaveFunctions: ObservableObject {
         }
         
         let hamiltonian = waveFunction.constructHamiltonian(potentialType: potentialType, boxLength: xMax, xStep: xStep, matrixSize: matrixSize)
+        let coeffArray = waveFunction.findEigenEnergies(realStartingArray: hamiltonian)[quantumNumb].coeffArray
         //makes wave function data
-        let dataPoints = waveFunction.findWaveFunction(hamiltonian: hamiltonian, boxLength: xMax, xStep: xStep, quantumNumb: quantumNumb, matrixSize: matrixSize)
+        let dataPoints = waveFunction.findWaveFunction(coeffArray: coeffArray, boxLength: xMax, xStep: xStep, matrixSize: matrixSize)
         
         for i in 0...dataPoints.endIndex-1 {
             plotData.append(contentsOf: [dataPoints[i]])
