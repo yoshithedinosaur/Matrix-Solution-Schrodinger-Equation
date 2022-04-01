@@ -26,7 +26,7 @@ class Integrator: ObservableObject {
         var pointsCount: Int = 0
         let potentialsArray = potentials.getPotential(potentialType: potentialType, xMin: 0.0, xMax: boxLength, xStep: xStep)
         
-        for xVal in stride(from: 0.0, through: boxLength, by: xStep) {
+        for xVal in stride(from: 0.0, to: boxLength, by: xStep) {
             integration += oneDSchrodinger.squareWellPsi(boxLength: boxLength, quantumNumb: quantumNumbi, xPosition: xVal) * potentialsArray[Int(xVal/xStep)][.Y]! * oneDSchrodinger.squareWellPsi(boxLength: boxLength, quantumNumb: quantumNumbj, xPosition: xVal)
             pointsCount += 1
         }
