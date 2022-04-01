@@ -71,6 +71,7 @@ class SchrodingerEqMat: ObservableObject {
         var correctionPsi: [Double] = []
         var ek = 0.0
         
+        
         for xVal in stride(from: 0.0, to: boxLength, by: xStep) {
             correctionPsi.append(0.0)
             for k in 1..<matrixSize+1 {

@@ -64,6 +64,9 @@ struct ContentView: View {
                         Text($0)
                     }
                 }
+                
+                Text("Select potential first, then click 'Print Energies' to get the energy levels to plot the wave functions of. (the wave functions are not correct btw)")
+                    .frame(width: 400, height: 50)
             }
             .frame(width: 400, height: 40)
             .padding()
